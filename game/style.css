@@ -1,0 +1,43 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    
+}
+header{
+    margin: 30px auto;
+    text-align: center;
+}
+.container{
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+    
+}
+.logo{
+    display: inline-block;
+    background-image: url(logo.png);
+    background-size:cover;
+     background-color: darkturquoise;
+    width: 400px;
+   height: 380px;
+}
+.header_welcome{
+    
+    display: block;
+    width: 600px;
+    text-align: center;
+    vertical-align:top;
+    font-size: 3.2em;
+    font-family: fantasy;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+.header_welcome:after{
+    
+    content: "Игры - гаремника!";
+    color: #8B0000;
+    font-family: gabriola;
+    font-size: 1.6em;
+    line-height: .1px;
+    text-transform: none;
+}

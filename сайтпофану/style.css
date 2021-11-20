@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section
+{
+    width: 100%;
+    height: 1000vh;
+background:  center/cover no-repeat fixed url("lapki.png"),repeating-linear-gradient(#FFF5CC 100px,#FFE0F5 400px,#FFF5CC 900px);
+}
+
+/* linear-gradient(#6A48D7,#FF4540,#FFDE40,#39E639,#3F92D2) */
+/*#BAADD6 100px,#D1A6D3 200px,#EFBCC6 300px,#F6DBC1 400px,#F6EBC1 500px,#C5E8B6 600px,#A4C7CF 700px,#BAADD6 750px*/
