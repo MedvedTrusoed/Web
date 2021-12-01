@@ -452,7 +452,7 @@
 //  // переменная title содержит текст элемента <li>
 //}
 
- //console.log(list.length)   //Количество элементов в ли
+//console.log(list.length)   //Количество элементов в ли
 let intro = document.querySelector('.intro');
 //intro.className = 'lox'  заменяет имя всех классов
 //intro.classList.add('mocha')
@@ -475,21 +475,268 @@ let intro = document.querySelector('.intro');
 //intro.removeEventListener('click',f1)
 
 let button = document.querySelector('.button')
-let hideFunction = function (){
-    if(document.querySelector('.main_header').hidden == true){
+let hideFunction = function () {
+    if (document.querySelector('.main_header').hidden == true) {
         document.querySelector('.main_header').hidden = false;
-    }else document.querySelector('.main_header').hidden = true;
-    
+    } else document.querySelector('.main_header').hidden = true;
+
 }
 
 
 
-button.addEventListener('click',hideFunction)
+button.addEventListener('click', hideFunction)
 
 //button.onclick = function(){button.hidden = true;}
 
 
 
----------коллбэк обработчик
-строки шаблона
-json.strignify()
+//---------коллбэк обработчик
+//строки шаблона
+//json.strignify()
+
+const arrayNumbers = [2, 2, 2, 6, 6, 3, 5, 9, 8, 9, 8, 8, 1, 2];
+const n = 10;
+//function calculateNumber (arrayNumbers,i){
+//    return arrayNumbers.length/(i+1);
+//}
+//for(let i = 0;i<n;i++){
+//    arrayNumbers.push(calculateNumber(arrayNumbers,i));
+//}
+
+//Отсортировать массив по убыванию
+
+//arrayNumbers.sort((a,b)=>b-a);
+
+//arrayNumbers.sort((a,b)=>b-a);
+
+//Убрать дубрирующиеся элементы
+//1 
+// let arrayWithoutRepeat = new Set();
+//
+//arrayNumbers.forEach((item)=>{
+//    arrayWithoutRepeat.add(item);
+//});
+//arrayWithoutRepeat = Array.from(arrayWithoutRepeat);
+//
+//console.log(arrayWithoutRepeat);
+
+
+//1.1  короткая запись
+//let newArr = Array.from(new Set(...[arrayNumbers]))
+
+
+//2
+//let arrayWithoutRepeats = [];
+//arrayWithoutRepeats.push(arrayNumbers[0]);
+//
+//
+//for (let i = 0; i < arrayNumbers.length; i++) {
+//
+//     for (let j = 0; j < arrayWithoutRepeats.length ; j++) {
+//        
+//        if(arrayWithoutRepeats[j]==arrayNumbers[i]){
+//            break;
+//
+//        }
+//         else if(j==arrayWithoutRepeats.length-1){
+//         arrayWithoutRepeats.push(arrayNumbers[i]);
+//         }
+//
+//}
+//}
+//
+//const arr = [{
+//    term: '10.12.2021'
+//}, {
+//    term: '01.02.2022'
+//}, {
+//    term: '23.02.2016'
+//}, {
+//    term: '21.10.2000'
+//}];
+//
+//let result = [...arr]; // отсортированный результат
+//
+//let data = [];
+//let year = 2;
+//let mounth = 1;
+//let day = 0;
+//
+//result.sort((a, b) => {
+//    
+//    let x = a.term.split('.')[2];
+//    let y = b.term.split('.')[2];
+//     if(x>y){
+//         return 1;
+//     }else {
+//         return -1;
+//     }
+//  
+//});
+//
+//for (let i = 0; i < arr.length; i++) {
+//    data.push(arr[i].term.split('.'));
+//
+//}
+//
+//function swap(arr, i, j) {
+//
+//    let temp = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = temp;
+//}
+//
+//
+//for (let i = 0; i < 3; i++) {
+//
+//    for (let j = 0; j < 3 - i; j++) {
+//
+//        if (data[j][year] > data[j + 1][year]) {
+//
+//            swap(data, j, j + 1);
+//            swap(result, j, j + 1);
+//
+//        } else if ((data[j][year] === data[j + 1][year]) && (data[j][mounth] > data[j + 1][mounth])) {
+//
+//            swap(data, j, j + 1);
+//            swap(result, j, j + 1);
+//        } else if ((data[j][year] === data[j + 1][year]) && (data[j][mounth] === data[j + 1][mounth]) && (data[j][day] > data[j + 1][day])) {
+//
+//            swap(data, j, j + 1);
+//            swap(result, j, j + 1);
+//        }
+//    }
+//
+//}
+//console.log(result);
+
+
+//Допиши функцию sumCubeRoots, которая возвращает сумму кубических корней 
+//для всех нечетных чисел массива целых чисел
+
+//const sumCubeRoots = (_arr) => {
+//    let sum = 0;
+//_arr.forEach((item)=>{
+//    if(item%2!==0){
+//        sum+=Math.pow(item,1/3); 
+//    }
+//});
+//    return sum;
+//};
+//
+////const arr = [1, 8, 10, 0, 27, 2, 1]; // Входной массив
+//let arr = new Array(1,8, 10, 0, 27, 2, 1);
+//
+//
+//
+//console.log(sumCubeRoots(arr)); // 5
+//
+
+// Коллбэк функция - это функция которая вызывает другую функцию
+//function sayHi(callback){
+//    
+//    callback();
+//}
+//function sayMew(){
+//    console.log('Pet says:Mew')
+//}
+//sayHi(sayMew);
+
+//
+//let arrayToys = ['Car','Bunny','Bear','Pinguin','Cube'];
+//let header = document.getElementsByClassName('main_header')[0];
+//
+//let menu = document.querySelector('.menu_ul');
+//
+////let childrensMenu = menu.childNodes;
+////
+////let firstChildMenu = menu.firstChild;
+////let lastChildMenu = menu.lastChild;
+////
+//
+//
+//let paragraph = document.createElement('p');
+//
+//paragraph.className = 'toys';
+//paragraph.innerHTML = '<b>Игрушки: </b>'
+//
+//header.before(paragraph);
+//
+//arrayToys.forEach((item)=>{
+//
+//    paragraph.innerHTML += `<br>${item}`;
+//
+//});
+//
+//let newArrayToys = arrayToys.map((item)=>{
+//    if(item.length > 4){
+//        return item.toUpperCase();
+//    }else
+//    return item.toLowerCase();});
+//
+////console.log(newArrayToys);
+//let strNewArrayToys = newArrayToys.join(' ');
+//
+//let backToArray = strNewArrayToys.split(' ');
+// backToArray.splice(0,0,'UNICORN');
+//let copyBackToArray = backToArray.slice();
+//
+////console.log(copyBackToArray );
+//
+//let reduceArray = copyBackToArray.reduce((acc,item)=>{
+//    return acc + item.length;
+//},0);
+//
+//console.log(reduceArray );
+//
+//paragraph.innerHTML = strNewArrayToys;
+
+
+
+// Пересечение массивов
+
+
+//let arr1 = [1,2,3,4];
+//let arr2 = [3,4,5,6];
+//
+//function intersection(first,second){
+//    let result = [];
+////   for(let i=0;i<arr1.length;i++){
+////       for(let j=0;j<arr2.length;j++){
+////           if(arr1[i]===arr2[j]){
+////               result.push(arr1[i]);
+////           }
+////       }
+////   }
+//    
+//  
+////       arr2.forEach((item2)=>{
+////           arr1.forEach(item1=>{
+////                if(item1===item2){
+////                result.push(item1);
+////            }   
+////           })
+////        
+////       }) 
+//      
+//    
+//    return result
+//}
+//
+//console.log(intersection(arr1,arr2));
+let headerBut = document.querySelector('.header_but');
+let buttonchik = headerBut.querySelector('.button');
+buttonchik.onclick = function(){
+    headerBut.removeChild(buttonchik);
+
+    let newButton = [];
+    for(let i = 0;i<2;i++){
+//    newButton.push(document.createElement('a'));
+//    newButton[i].innerHTML = `Нажми меня пупсик ${i+1}`;
+//    newButton[i].className = 'button';
+//    headerBut.prepend(newButton[i]);
+       
+        headerBut.innerHTML='<a class="button">Нажми меня2</a>'
+         headerBut.innerHTML+='<a class="button">Нажми меня2</a>'
+    }
+}

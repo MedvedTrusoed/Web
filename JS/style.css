@@ -63,6 +63,12 @@ header{
     background-color: #fff;
     color: #FF8700;
 }
+
+.toys{
+    color:#FF8700;
+    text-align: center;
+}
+
 .animate{
     font-size: 40px;
 }

@@ -7,6 +7,9 @@
     <title>Лукьянова Виктория</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+
 
 </head>
 
@@ -14,15 +17,12 @@
     <header>
         <div class="container">
             <ul class="menu_list clearfix">
-                <a class="menu_link" href="#contacts">
-                    <li>Контакты</li>
-                </a>
-                <a class="menu_link" href="#skills">
-                    <li>Навыки</li>
-                </a>
-                <a class="menu_link" href="#about">
-                    <li>Обо&nbsp;мне</li>
-                </a>
+                
+                    <li><a class="menu_link" href="#contacts">Контакты</a></li>
+            
+                    <li> <a class="menu_link" href="#skills">Навыки</a></li>
+                
+                    <li><a class="menu_link" href="#about">Обо&nbsp;мне </a></li>             
 
             </ul>
 
@@ -64,17 +64,33 @@
     <div class="jobs">
         <div class="container">
             <h3 class="page_headers">Мои работы</h3>
-            <div class="slider_container">
-                <a href="#" class="slider slider_left"></a>
-                <div class="slider_image"><img src="media/job1.jpg" alt="Образовательная платформа" class="slider_img">
-                </div>
-                <a href="#" class="slider slider_right "></a>
-            </div>
-            <div class="slider_switch ">
-                <a href="#" class="slider_radio active_radio"></a>
-                <a href="#" class="slider_radio"></a>
-                <a href="#" class="slider_radio"></a>
-            </div>
+            
+      <div class="slider-swiper">  
+    <div class="swiper">
+    <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+            <div class="swiper-slide"><img src="media/job1.jpg" alt="Образовательная платформа" class="slider_img"></div>
+            <div class="swiper-slide"><img src="media/Soba.png" alt="Статьи" class="slider_img"></div>
+            <div class="swiper-slide"><img src="media/myCite2.png" alt="Сайт визитка" class="slider_img"></div>
+       
+        </div>
+    <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+
+
+
+    </div>
+               <!-- If we need navigation buttons -->
+        <div class="swiper-navigation">
+  <button id="swiperPrev" class="slider_left slider"></button>
+  <button id="swiperNext" class="slider_right slider"></button>
+</div>
+            
+       </div>        
+
+
         </div>
     </div>
     <footer>
@@ -83,11 +99,14 @@
         </p>
         <p><a href="tel:+79206300853">tel: +7 (920) 630 08 53</a></p>
         <div class="contacts_icons">
-            <a href="#" class="contact_icon"></a>
-            <a href="#" class="contact_icon"></a>
-            <a href="#" class="contact_icon"></a>
+            <a href="tel:+79206300853" class="contact_icon"></a>
+            <a href="https://www.instagram.com/vaiktoriya" class="contact_icon"></a>
+            <a href="https://vk.com/viktoryai" class="contact_icon"></a>
         </div>
     </footer>
+    
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

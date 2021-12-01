@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+.red, .green, .blue {
+  position: absolute;
+  font-size: 32px;
+}
+/*
+.wrap:first-child {
+  opacity: .5;
+}
+*/
+       div:nth-child(3){
+             opacity: .99;
+        }
+.red {
+  background: red;
+  z-index: 1;
+  
+}
+.green {
+  background: green;
+}
+.blue {
+  background: blue;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+  <p>Cделать так, чтобы красный оказался позади синего и зеленого, при этом нельзя менять:</p>
+  <ul>
+    <li>Нельзя менять HTML-разметку</li>
+    <li>Нельзя менять/добавлять z-index к элементам</li>
+    <li>Нельзя менять/добавлять позиционирование к элементам</li>
+  </ul>
+  <div>
+    <span class="red">Red</span>
+  </div>
+  <div>
+    <span class="green">Green</span>
+  </div>
+  <div>
+    <span class="blue">Blue</span>
+  </div>
+</div>
+</body>
+</html>

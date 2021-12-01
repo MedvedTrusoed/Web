@@ -1,3 +1,7 @@
+*{
+     scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -5,6 +9,7 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
+   
 }
 
 h1,
@@ -59,15 +64,28 @@ header {
 
 .menu_list {
     margin-top: 30px;
+     
 }
 
 .menu_link {
+
     float: right;
     margin-left: 35px;
 }
-
-.menu_link:last-child {
-    margin-left: 0;
+.menu_link:after {
+      content:'';
+    display: block;
+    margin: 10% auto 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFF;
+    transition: width .2s ease;
+    
+}
+.menu_link:hover::after {
+      width: 80%;
+    
+    
 }
 
 .clearfix::after {
@@ -107,9 +125,41 @@ header {
     justify-content: space-between;
 }
 
+.swiper {
+  max-width: 600px;
+    width: 100%;
+  height: 300px;
+}
+ .slider_img {
+        width: 100%;
+       
+    }
+
+
+.swiper-pagination-bullet{
+    width: 12px !important;
+    height: 12px !important;
+    background-color: #25795F !important;
+}
+
+.swiper-navigation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+    width: 100%;
+  margin: 0 auto;
+    position: relative;
+    top: -145px;
+}
+
 .slider_container {
     display: flex;
     justify-content: center;
+}
+
+button{
+    background: none;
+    border: none;
 }
 
 .slider {
@@ -118,10 +168,7 @@ header {
     height: 25px;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: 150px;
-    margin-left: 49px;
-    margin-right: 49px;
-    margin-bottom: 16px;
+    
 
 }
 
@@ -179,7 +226,18 @@ footer {
     height: 52px;
     border-radius: 50%;
     background: #fff;
+    background-size: contain;
+    
+}
+.contact_icon:nth-child(1) {
+       background-image: url(media/teleg.svg);
 
+}
+.contact_icon:nth-child(2) {
+ background-image: url(media/insta.svg);
+}
+.contact_icon:nth-child(3) {
+   background-image: url(media/vk.svg);
 }
 
 .contact_icon:last-child {
@@ -232,23 +290,18 @@ footer {
         margin-right: 1%;
         margin-top: 0;
     }
+    
+.swiper {
+  max-width: 450px;
+    width: 100%;
+  height: 250px;
+}
 
-    .slider_image {
-        width: 570px;
+    .swiper-navigation{
+            display: none;
     }
 
-    .slider_img {
-        width: 100%;
-    }
-
-    .slider {
-
-        width: 64px;
-        height: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
+ 
     .jobs .container {
         max-width: none;
     }
@@ -317,7 +370,11 @@ footer {
         width: 40px;
         height: 40px;
     }
-
+.swiper {
+    width: 100%;
+  max-height: 300px;
+    height: 100%;
+}
     .slider {
         display: none;
     }
