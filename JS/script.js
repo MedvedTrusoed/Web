@@ -724,19 +724,42 @@ const n = 10;
 //}
 //
 //console.log(intersection(arr1,arr2));
-let headerBut = document.querySelector('.header_but');
-let buttonchik = headerBut.querySelector('.button');
-buttonchik.onclick = function(){
-    headerBut.removeChild(buttonchik);
+// let headerBut = document.querySelector('.header_but');
+// let buttonchik = headerBut.querySelector('.button');
+// buttonchik.onclick = function(){
+//     headerBut.removeChild(buttonchik);
 
-    let newButton = [];
-    for(let i = 0;i<2;i++){
-//    newButton.push(document.createElement('a'));
-//    newButton[i].innerHTML = `Нажми меня пупсик ${i+1}`;
-//    newButton[i].className = 'button';
-//    headerBut.prepend(newButton[i]);
-       
-        headerBut.innerHTML='<a class="button">Нажми меня2</a>'
-         headerBut.innerHTML+='<a class="button">Нажми меня2</a>'
-    }
+//     let newButton = [];
+//     for(let i = 0;i<2;i++){
+// //    newButton.push(document.createElement('a'));
+// //    newButton[i].innerHTML = `Нажми меня пупсик ${i+1}`;
+// //    newButton[i].className = 'button';
+// //    headerBut.prepend(newButton[i]);
+
+//         headerBut.innerHTML='<a class="button">Нажми меня2</a>'
+//          headerBut.innerHTML+='<a class="button">Нажми меня2</a>'
+//     }
+// }
+
+
+const numberOfFilms = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
+// let numberOfFilms = 5;
+// let lastFilm = 'pipa';
+// let markLastFilm = 4;
+const lastFilm1 = prompt('Один из последних просмотренных фильмов?', ''),
+    markLastFilm1 = Number(prompt('На сколько оцените его?', '')),
+    lastFilm2 = prompt('Один из последних просмотренных фильмов?', ''),
+    markLastFilm2 = Number(prompt('На сколько оцените его?', ''));
+
+const personalMoveDB = {
+    count: numberOfFilms,
+    moves: {},
+    actors: {},
+    genres: [],
+    private: false,
 }
+
+personalMoveDB.moves[lastFilm1] = markLastFilm1;
+personalMoveDB.moves[lastFilm2] = markLastFilm2;
+
+console.log(personalMoveDB);
