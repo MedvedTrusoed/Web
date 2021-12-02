@@ -746,10 +746,14 @@ const numberOfFilms = Number(prompt('Сколько фильмов вы уже �
 // let numberOfFilms = 5;
 // let lastFilm = 'pipa';
 // let markLastFilm = 4;
-const lastFilm1 = prompt('Один из последних просмотренных фильмов?', ''),
-    markLastFilm1 = Number(prompt('На сколько оцените его?', '')),
-    lastFilm2 = prompt('Один из последних просмотренных фильмов?', ''),
-    markLastFilm2 = Number(prompt('На сколько оцените его?', ''));
+// const lastFilm1 = prompt('Один из последних просмотренных фильмов?', ''),
+//     markLastFilm1 = Number(prompt('На сколько оцените его?', '')),
+//     lastFilm2 = prompt('Один из последних просмотренных фильмов?', ''),
+//     markLastFilm2 = Number(prompt('На сколько оцените его?', ''));
+
+    let lastFilm ='',
+    markLastFilm=0;
+
 
 const personalMoveDB = {
     count: numberOfFilms,
@@ -758,8 +762,29 @@ const personalMoveDB = {
     genres: [],
     private: false,
 }
+let count = 2;
+// for(let i = 0;i<count;i++){}
 
-personalMoveDB.moves[lastFilm1] = markLastFilm1;
-personalMoveDB.moves[lastFilm2] = markLastFilm2;
+while(count!=0){
+    lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+    if(lastFilm==null||lastFilm.length>50||lastFilm==''){
+        continue;
+    }
+    markLastFilm = Number(prompt('На сколько оцените его?', ''));
+    personalMoveDB.moves[lastFilm] = markLastFilm;
+    count--;
+}
+
+if(personalMoveDB.count<10){
+    alert('Просмотрено довольно мало фильмов');
+}else if(personalMoveDB.count>=10&&personalMoveDB.count<=30){
+    alert('Вы классический зритель');
+}else if(personalMoveDB.count>30){
+    alert('Вы киноман');
+}else{
+    alert('Произошла ошибка');
+}
+// personalMoveDB.moves[lastFilm1] = markLastFilm1;
+// personalMoveDB.moves[lastFilm2] = markLastFilm2;
 
 console.log(personalMoveDB);
