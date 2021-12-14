@@ -742,74 +742,69 @@ const n = 10;
 // }
 
 
-//let  numberOfFilms = 0;
-
-//start();
-
-
 const personalMoveDB = {
     count: 0,
     moves: {},
     actors: {},
     genres: [],
     privat: false,
-    start: function (){
-       
-        do{
-             this.count = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
-        }while(this.count == ''||this.count==null||isNaN(this.count));
+    start: function () {
+
+        do {
+            this.count = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
+        } while (this.count == '' || this.count == null || isNaN(this.count));
     },
-    rememberMyFilms: function (){
+    rememberMyFilms: function () {
         let count = 2;
-        while(count!=0){
+        while (count != 0) {
             const lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
-            markLastFilm = Number(prompt('На сколько оцените его?', ''));
-             if(lastFilm==null||lastFilm.length>50||lastFilm==''||markLastFilm==null||isNaN(markLastFilm)){
-                 continue;
-             }
-             
-             this.moves[lastFilm] = markLastFilm;
-             count--;
-         }
+                markLastFilm = Number(prompt('На сколько оцените его?', ''));
+            if (lastFilm == null || lastFilm.length > 50 || lastFilm == '' || markLastFilm == null || isNaN(markLastFilm)) {
+                continue;
+            }
+
+            this.moves[lastFilm] = markLastFilm;
+            count--;
+        }
     },
-    detectPersonalLevel: function (){
-        if(this.count<10){
+    detectPersonalLevel: function () {
+        if (this.count < 10) {
             alert('Просмотрено довольно мало фильмов');
-        }else if(this.count>=10&&this.count<=30){
+        } else if (this.count >= 10 && this.count <= 30) {
             alert('Вы классический зритель');
-        }else if(this.count>30){
+        } else if (this.count > 30) {
             alert('Вы киноман');
-        }else{
+        } else {
             alert('Произошла ошибка');
         }
     },
-    showMyDB: function (hidden){
-        if(!hidden){
+    showMyDB: function (hidden) {
+        if (!hidden) {
             console.log(personalMoveDB);
         }
     },
-    writeYourGenres: function (){
-   
-        for(let i = 0; i<3;i++){
-             let currentGenre;
-       do{
-          currentGenre = prompt(`Ваш любимый жанр под номером ${i+1}`,'');
-       } while(currentGenre==null||currentGenre=='');
+    writeYourGenres: function () {
 
-       this.genres.push(currentGenre);
+        for (let i = 0; i < 3; i++) {
+            let currentGenre;
+            do {
+                currentGenre = prompt(`Ваш любимый жанр под номером ${i+1}`, '');
+            } while (currentGenre == null || currentGenre == '');
+
+            this.genres.push(currentGenre);
         }
-        this.genres.forEach((item,index)=>{
+        this.genres.forEach((item, index) => {
             console.log(`Любимый жанр #${index+1} - это ${item}`);
         });
-     
-    },
-    
-    toggleVisibleMyDB: function(){
 
-        if(this.privat===false){
-            this.privat=true;
-        }else{
-            this.privat=false;
+    },
+
+    toggleVisibleMyDB: function () {
+
+        if (!this.privat) {
+            this.privat = true;
+        } else {
+            this.privat = false;
         }
     },
 };

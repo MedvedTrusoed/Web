@@ -1,0 +1,40 @@
+.frame{
+    width: 250px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid rgb(253, 139, 8);
+}
+
+#banana{
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+    background: url(images/banana.png);
+    background-size: contain;
+    position: relative;
+    top: 20%;
+    
+}
+
+.blinking{
+    animation: blinking .6s infinite linear;
+}
+
+@keyframes blinking {
+    0%{
+        background: url(images/bananaOpenEyEs.png);
+    }
+    25%{
+        background: url(images/bananaMediumEyes.png);
+    }
+    50%{
+        background: url(images/bananaCloseEyes.png);
+    }
+    75%{
+        background: url(images/bananaMediumEyes.png);
+    } 
+    100%{
+        background: url(images/bananaOpenEyEs.png);
+    }
+    
+}
