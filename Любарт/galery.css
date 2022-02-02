@@ -1,0 +1,31 @@
+.header {
+    background: center / cover no-repeat url('images/head.jpg');
+    height: 100%;
+    padding-bottom: 2%;
+
+}
+
+.galery {
+    margin-top: 2%;
+}
+
+.galery-image {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+@media(max-width: 766px) {
+
+    .galery {
+        margin-top: 10%;
+    }
+
+}
+
+@media(max-width: 480px) {
+
+    .galery {
+        margin-top: 16%;
+    }
+
+}

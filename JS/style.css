@@ -32,15 +32,23 @@ header{
     font-family: 'Impact',sans-serif;
     font-size: 35px;
 }
+button{
+background:#74217D;
+border: none;
+color:#fff;
+}
+.active{
+    background: #FF8700;
+}
 .menu_link{
     text-transform: uppercase;
     font-size: 14px;
     padding: 10px 15px;
     transition: all .2s linear;
 }
-.menu_link:hover{
+/* .menu_link:hover{
     background-color: #74216F;
-}
+} */
 .main_header{
     font-size: 26px;
     text-align: center;
