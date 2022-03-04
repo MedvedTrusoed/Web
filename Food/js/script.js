@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         tabContent.forEach(item => {
             item.style.display = 'none';
+            //item.classList.add('hide');
         });
 
         tabheaderItem.forEach(item => {
@@ -47,6 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function timeToEnd(endTime) {
 
+        //parse позволяет получить время в милисекундах от 1970г.
         const t = Date.parse(endTime) - Date.parse(new Date()),
             days = Math.floor((t / (1000 * 60 * 60 * 24))),
             hours = Math.floor((t / (1000 * 60 * 60) % 24)),
@@ -134,6 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (event.target == modalWindow) {
             modalClose();
+            
         }
     });
 
@@ -227,5 +230,51 @@ window.addEventListener('DOMContentLoaded', () => {
         '.menu .container',
         "menu__item"
     ).render();
+
+
+    const forms  = document.querySelectorAll('form');
+
+    const status = {
+        load:'Загружаю',
+        finish:'Мы с вами свяжемся!',
+        falure:'Произошла ошибка!'
+    };
+
+    forms.forEach((item)=>{
+        postData(item);
+    });
+    function postData(form){
+
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault();
+
+            const statusText = document.createElement('div');
+            statusText.classList.add('status');
+            statusText.textContent = status.load;
+            form.append(statusText);
+
+            const request = new XMLHttpRequest();
+            request.open('POST','server.php');
+
+            const formData = new FormData(form);
+
+            request.send(formData);
+           
+
+            request.addEventListener('load',()=>{
+
+                if(request.status === 200){
+                    console.log('Все норм');
+                    statusText.textContent = status.finish;
+            
+
+                }else{
+                    console.log('все не норм');
+                    statusText.textContent = status.falure;
+                }
+            });
+        });
+        
+    }
 
 });
